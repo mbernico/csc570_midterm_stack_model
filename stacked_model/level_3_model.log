@@ -1,0 +1,43 @@
+INFO::2016-10-21 20:27:02,826 Loading Data
+DEBUG::2016-10-21 20:27:03,368 X Shape = (160000, 3) y Shape = (160000,) S Shape = (40000, 3)
+INFO::2016-10-21 20:27:03,368 Searching for a final logit model...
+INFO::2016-10-21 20:27:27,590 Loading Data
+DEBUG::2016-10-21 20:27:28,130 X Shape = (160000, 3) y Shape = (160000,) S Shape = (40000, 3)
+INFO::2016-10-21 20:27:28,130 Searching for a final logit model...
+INFO::2016-10-21 20:27:44,569 Loading Data
+DEBUG::2016-10-21 20:27:45,108 X Shape = (160000, 3) y Shape = (160000,) S Shape = (40000, 3)
+INFO::2016-10-21 20:27:45,108 Searching for a final logit model...
+INFO::2016-10-21 20:28:41,927 Loading Data
+DEBUG::2016-10-21 20:28:42,468 X Shape = (160000, 3) y Shape = (160000,) S Shape = (40000, 3)
+INFO::2016-10-21 20:28:42,468 Searching for a final logit model...
+INFO::2016-10-21 20:28:48,754 Done Searching
+INFO::2016-10-21 20:28:48,754 Best Parameters: {'C': 1.4100000000000001}
+INFO::2016-10-21 20:28:48,754 Best Score: 0.989656754274
+INFO::2016-10-21 20:28:48,754 Writing Final Score
+INFO::2016-10-21 20:28:48,873 Done
+INFO::2016-10-21 21:05:26,511 Loading Data
+DEBUG::2016-10-21 21:05:27,040 X Shape = (160000, 3) y Shape = (160000,) S Shape = (40000, 3)
+INFO::2016-10-21 21:05:27,041 Searching for a final logit model...
+INFO::2016-10-21 21:05:27,506 Done
+INFO::2016-10-21 21:06:19,708 Loading Data
+DEBUG::2016-10-21 21:06:20,241 X Shape = (160000, 3) y Shape = (160000,) S Shape = (40000, 3)
+INFO::2016-10-21 21:06:20,241 Searching for a final logit model...
+INFO::2016-10-21 21:06:20,743 Done
+INFO::2016-10-22 08:28:19,505 Loading Data
+DEBUG::2016-10-22 08:28:20,042 X Shape = (160000, 3) y Shape = (160000,) S Shape = (40000, 3)
+INFO::2016-10-22 08:28:20,042 Searching for a final logit model...
+INFO::2016-10-22 08:28:44,706 Loading Data
+DEBUG::2016-10-22 08:28:45,235 X Shape = (160000, 3) y Shape = (160000,) S Shape = (40000, 3)
+INFO::2016-10-22 08:28:45,235 Searching for a final logit model...
+INFO::2016-10-22 08:31:19,740 Done Searching
+INFO::2016-10-22 08:31:19,740 Best Parameters: {'min_samples_split': 1, 'max_features': 'auto', 'max_depth': 5, 'criterion': 'entropy'}
+INFO::2016-10-22 08:31:19,740 Best Score: 0.98988349062
+INFO::2016-10-22 08:31:19,740 Writing Final Score
+INFO::2016-10-22 08:33:24,571 Loading Data
+DEBUG::2016-10-22 08:33:25,100 X Shape = (160000, 3) y Shape = (160000,) S Shape = (40000, 3)
+INFO::2016-10-22 08:33:25,100 Searching for a final logit model...
+INFO::2016-10-22 08:35:52,819 Done Searching
+INFO::2016-10-22 08:35:52,819 Best Parameters: {'min_samples_split': 3, 'criterion': 'entropy', 'max_features': 'auto', 'max_depth': 5}
+INFO::2016-10-22 08:35:52,819 Best Score: 0.989883676798
+INFO::2016-10-22 08:35:52,819 Writing Final Score
+INFO::2016-10-22 08:35:53,041 Done

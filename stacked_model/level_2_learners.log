@@ -1,0 +1,145 @@
+INFO::2016-10-20 18:35:19,101 Loading Data
+DEBUG::2016-10-20 18:35:19,635 X Shape = (160000, 5)y Shape = (160000,)
+INFO::2016-10-20 18:35:58,892 Loading Data
+DEBUG::2016-10-20 18:35:59,433 X Shape = (160000, 5)y Shape = (160000,)
+DEBUG::2016-10-20 18:35:59,433 Index(['xgboost', 'etc', 'extra_tree', 'rfc', 'deep_learn'], dtype='object')
+INFO::2016-10-20 18:49:21,585 Loading Data
+DEBUG::2016-10-20 18:49:22,194 X Shape = (160000, 5)y Shape = (160000,)S Shape = (160000, 5)
+DEBUG::2016-10-20 18:49:22,217 Fold 0
+INFO::2016-10-20 18:49:58,456 Loading Data
+DEBUG::2016-10-20 18:49:59,065 X Shape = (160000, 5)y Shape = (160000,)S Shape = (160000, 5)
+DEBUG::2016-10-20 18:49:59,093 Fold 0
+DEBUG::2016-10-20 18:50:08,221 Fold 1
+DEBUG::2016-10-20 18:50:17,165 Fold 2
+DEBUG::2016-10-20 18:50:25,897 Fold 3
+DEBUG::2016-10-20 18:50:34,937 Fold 4
+INFO::2016-10-20 18:50:43,688 extra tree  done training.  AUC = 0.988227138221
+INFO::2016-10-21 17:29:28,218 Loading Data
+DEBUG::2016-10-21 17:29:28,829 X Shape = (160000, 5) y Shape = (160000,) S Shape = (160000, 5)
+INFO::2016-10-21 17:29:28,829 Brewing Classifiers
+DEBUG::2016-10-21 17:29:28,829 3 Classifiers Brewed
+INFO::2016-10-21 17:29:28,829 Fitting Classifier:rfc
+INFO::2016-10-21 17:45:41,065 GridSearch done for rfc
+INFO::2016-10-21 17:45:41,066 {'max_depth': 10, 'max_features': 'log2', 'criterion': 'gini', 'min_samples_split': 2}
+INFO::2016-10-21 17:45:41,066 0.989708276359
+INFO::2016-10-21 17:45:41,066 Fitting Classifier:extra_tree
+INFO::2016-10-21 17:50:34,086 GridSearch done for extra_tree
+INFO::2016-10-21 17:50:34,087 {'max_depth': 10, 'max_features': 'log2', 'criterion': 'gini', 'min_samples_split': 3}
+INFO::2016-10-21 17:50:34,087 0.98967417313
+INFO::2016-10-21 17:50:34,087 Fitting Classifier:xgboost
+INFO::2016-10-21 18:36:03,291 Loading Data
+DEBUG::2016-10-21 18:36:03,905 X Shape = (160000, 5) y Shape = (160000,) S Shape = (160000, 5)
+INFO::2016-10-21 18:36:03,905 Brewing Classifiers
+DEBUG::2016-10-21 18:36:03,905 3 Classifiers Brewed
+INFO::2016-10-21 18:36:03,906 Fitting Classifier:rfc
+INFO::2016-10-21 18:36:03,908 GridSearch started for rfc
+INFO::2016-10-21 18:39:12,778 GridSearch done for rfc
+INFO::2016-10-21 18:39:12,778 {
+INFO::2016-10-21 18:39:12,778 0.989663099841
+INFO::2016-10-21 18:39:12,779 Fitting Classifier:extra_tree
+INFO::2016-10-21 18:39:12,779 GridSearch started for extra_tree
+INFO::2016-10-21 18:40:14,532 GridSearch done for extra_tree
+INFO::2016-10-21 18:40:14,532 {'criterion': 'entropy', 'min_samples_split': 3, 'max_features': 'auto', 'max_depth': 10}
+INFO::2016-10-21 18:40:14,533 0.989665525789
+INFO::2016-10-21 18:40:14,533 Fitting Classifier:xgboost
+INFO::2016-10-21 18:40:14,533 GridSearch started for xgboost
+INFO::2016-10-21 18:42:33,641 GridSearch done for xgboost
+INFO::2016-10-21 18:42:33,641 {'learning_rate': 0.01, 'colsample_bytree': 1, 'max_depth': 16}
+INFO::2016-10-21 18:42:33,641 0.989262775618
+INFO::2016-10-21 18:42:33,641 Done
+INFO::2016-10-21 18:44:55,417 Loading Data
+DEBUG::2016-10-21 18:44:56,022 X Shape = (160000, 5) y Shape = (160000,) S Shape = (160000, 5)
+INFO::2016-10-21 18:44:56,023 Brewing Classifiers
+DEBUG::2016-10-21 18:44:56,023 3 Classifiers Brewed
+INFO::2016-10-21 18:44:56,023 Fitting Classifier:xgboost
+INFO::2016-10-21 18:44:56,026 Step 1. K-Fold 
+DEBUG::2016-10-21 18:44:56,051 Fold 0
+DEBUG::2016-10-21 18:45:15,042 Fold 1
+DEBUG::2016-10-21 18:45:33,272 Fold 2
+DEBUG::2016-10-21 18:45:51,449 Fold 3
+DEBUG::2016-10-21 18:46:09,721 Fold 4
+INFO::2016-10-21 18:46:28,227 xgboost done training.  AUC = 0.987515815397
+INFO::2016-10-21 18:46:28,227 Step 2. Submission Scoring
+INFO::2016-10-21 18:46:52,115 Fitting Classifier:extra_tree
+INFO::2016-10-21 18:46:52,115 Step 1. K-Fold 
+DEBUG::2016-10-21 18:46:52,138 Fold 0
+DEBUG::2016-10-21 18:47:00,363 Fold 1
+DEBUG::2016-10-21 18:47:09,294 Fold 2
+DEBUG::2016-10-21 18:47:18,735 Fold 3
+DEBUG::2016-10-21 18:47:27,379 Fold 4
+INFO::2016-10-21 18:47:36,528 extra_tree done training.  AUC = 0.988292442803
+INFO::2016-10-21 18:47:36,528 Step 2. Submission Scoring
+INFO::2016-10-21 18:47:51,682 Fitting Classifier:rfc
+INFO::2016-10-21 18:47:51,682 Step 1. K-Fold 
+DEBUG::2016-10-21 18:47:51,706 Fold 0
+DEBUG::2016-10-21 18:48:20,781 Fold 1
+DEBUG::2016-10-21 18:48:50,666 Fold 2
+DEBUG::2016-10-21 18:49:20,491 Fold 3
+DEBUG::2016-10-21 18:49:50,484 Fold 4
+INFO::2016-10-21 18:50:19,877 rfc done training.  AUC = 0.988442112853
+INFO::2016-10-21 18:50:19,877 Step 2. Submission Scoring
+INFO::2016-10-21 18:51:02,433 Done
+INFO::2016-10-21 19:51:34,469 Loading Data
+DEBUG::2016-10-21 19:51:35,083 X Shape = (160000, 5) y Shape = (160000,) S Shape = (160000, 5)
+INFO::2016-10-21 19:51:35,083 Brewing Classifiers
+DEBUG::2016-10-21 19:51:35,083 3 Classifiers Brewed
+INFO::2016-10-21 19:51:35,083 Fitting Classifier:rfc
+INFO::2016-10-21 19:51:35,087 Step 1. K-Fold 
+DEBUG::2016-10-21 19:51:35,111 Fold 0
+DEBUG::2016-10-21 19:51:55,677 Fold 1
+DEBUG::2016-10-21 19:52:16,453 Fold 2
+DEBUG::2016-10-21 19:52:36,918 Fold 3
+DEBUG::2016-10-21 19:52:57,375 Fold 4
+INFO::2016-10-21 19:53:17,172 rfc done training.  AUC = 0.989598734768
+INFO::2016-10-21 19:53:17,172 Step 2. Submission Scoring
+INFO::2016-10-21 19:53:44,318 Fitting Classifier:extra_tree
+INFO::2016-10-21 19:53:44,319 Step 1. K-Fold 
+DEBUG::2016-10-21 19:53:44,342 Fold 0
+DEBUG::2016-10-21 19:53:49,363 Fold 1
+DEBUG::2016-10-21 19:53:54,179 Fold 2
+DEBUG::2016-10-21 19:53:59,003 Fold 3
+DEBUG::2016-10-21 19:54:03,923 Fold 4
+INFO::2016-10-21 19:54:09,062 extra_tree done training.  AUC = 0.989582302143
+INFO::2016-10-21 19:54:09,062 Step 2. Submission Scoring
+INFO::2016-10-21 19:54:17,061 Fitting Classifier:xgboost
+INFO::2016-10-21 19:54:17,061 Step 1. K-Fold 
+DEBUG::2016-10-21 19:54:17,084 Fold 0
+DEBUG::2016-10-21 19:54:32,611 Fold 1
+DEBUG::2016-10-21 19:54:47,756 Fold 2
+DEBUG::2016-10-21 19:55:03,395 Fold 3
+DEBUG::2016-10-21 19:55:18,990 Fold 4
+INFO::2016-10-21 19:55:34,912 xgboost done training.  AUC = 0.98892775175
+INFO::2016-10-21 19:55:34,912 Step 2. Submission Scoring
+INFO::2016-10-21 19:55:55,860 Done
+INFO::2016-10-21 20:09:01,601 Loading Data
+DEBUG::2016-10-21 20:09:02,198 X Shape = (160000, 5) y Shape = (160000,) S Shape = (40000, 5)
+INFO::2016-10-21 20:09:02,198 Brewing Classifiers
+DEBUG::2016-10-21 20:09:02,198 3 Classifiers Brewed
+INFO::2016-10-21 20:09:02,198 Fitting Classifier:rfc
+INFO::2016-10-21 20:09:02,201 Step 1. K-Fold 
+DEBUG::2016-10-21 20:09:02,225 Fold 0
+DEBUG::2016-10-21 20:09:22,691 Fold 1
+DEBUG::2016-10-21 20:09:43,564 Fold 2
+DEBUG::2016-10-21 20:10:04,731 Fold 3
+DEBUG::2016-10-21 20:10:25,188 Fold 4
+INFO::2016-10-21 20:10:45,168 rfc done training.  AUC = 0.989598734768
+INFO::2016-10-21 20:10:45,538 Step 2. Submission Scoring
+INFO::2016-10-21 20:11:11,311 Fitting Classifier:extra_tree
+INFO::2016-10-21 20:11:11,311 Step 1. K-Fold 
+DEBUG::2016-10-21 20:11:11,335 Fold 0
+DEBUG::2016-10-21 20:11:16,457 Fold 1
+DEBUG::2016-10-21 20:11:21,577 Fold 2
+DEBUG::2016-10-21 20:11:26,896 Fold 3
+DEBUG::2016-10-21 20:11:32,011 Fold 4
+INFO::2016-10-21 20:11:37,175 extra_tree done training.  AUC = 0.989580869603
+INFO::2016-10-21 20:11:37,548 Step 2. Submission Scoring
+INFO::2016-10-21 20:11:44,571 Fitting Classifier:xgboost
+INFO::2016-10-21 20:11:44,571 Step 1. K-Fold 
+DEBUG::2016-10-21 20:11:44,595 Fold 0
+DEBUG::2016-10-21 20:12:00,881 Fold 1
+DEBUG::2016-10-21 20:12:16,756 Fold 2
+DEBUG::2016-10-21 20:12:32,937 Fold 3
+DEBUG::2016-10-21 20:12:48,991 Fold 4
+INFO::2016-10-21 20:13:05,188 xgboost done training.  AUC = 0.98892775175
+INFO::2016-10-21 20:13:05,561 Step 2. Submission Scoring
+INFO::2016-10-21 20:13:26,345 Done

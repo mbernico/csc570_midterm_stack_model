@@ -1,0 +1,135 @@
+INFO:root:Loading Data
+INFO:root:Loading Data
+INFO:root:Loading Data
+INFO:root:Done
+2016-10-19 19:42:43,840 Loading Data
+2016-10-19 19:42:44,597 X Shape = (160000, 20)y Shape = (160000,)S Shape = (40000, 20)
+2016-10-19 19:42:44,597 Brewing Classifiers
+2016-10-19 19:42:44,597 Done
+ 20:2016-10-19 19:57:44,931 Loading Data
+ 10:2016-10-19 19:57:45,681 X Shape = (160000, 20)y Shape = (160000,)S Shape = (40000, 20)
+ 20:2016-10-19 19:57:45,681 Brewing Classifiers
+ 20:2016-10-19 19:58:10,415 Loading Data
+ 10:2016-10-19 19:58:11,173 X Shape = (160000, 20)y Shape = (160000,)S Shape = (40000, 20)
+ 20:2016-10-19 19:58:11,173 Brewing Classifiers
+ 10:2016-10-19 19:58:11,173 1Classifiers Brewed
+ 20:2016-10-19 19:58:11,173 Fitting Classifier:etc
+ 20:2016-10-19 19:58:11,174 Done
+ 20:2016-10-19 20:19:48,101 Loading Data
+ 10:2016-10-19 20:19:48,849 X Shape = (160000, 20)y Shape = (160000,)S Shape = (40000, 20)
+ 20:2016-10-19 20:19:48,850 Brewing Classifiers
+ 10:2016-10-19 20:19:48,850 1 Classifiers Brewed
+ 20:2016-10-19 20:19:48,850 Fitting Classifier:etc
+ 20:2016-10-19 20:19:48,850 Step 1. K-Fold OOB Creation
+ 20:2016-10-19 20:20:26,017 Loading Data
+ 10:2016-10-19 20:20:26,763 X Shape = (160000, 20)y Shape = (160000,)S Shape = (40000, 20)
+ 20:2016-10-19 20:20:26,763 Brewing Classifiers
+ 10:2016-10-19 20:20:26,763 1 Classifiers Brewed
+ 20:2016-10-19 20:20:26,763 Fitting Classifier:etc
+ 20:2016-10-19 20:20:26,764 Step 1. K-Fold OOB Creation
+ 10:2016-10-19 20:20:26,787 Fold 0
+ 20:2016-10-19 20:32:49,468 Loading Data
+ 10:2016-10-19 20:32:50,211 X Shape = (160000, 20)y Shape = (160000,)S Shape = (40000, 20)
+ 20:2016-10-19 20:32:50,211 Brewing Classifiers
+ 10:2016-10-19 20:32:50,211 1 Classifiers Brewed
+ 20:2016-10-19 20:32:50,211 Fitting Classifier:etc
+ 20:2016-10-19 20:32:50,211 Step 1. K-Fold OOB Creation
+ 10:2016-10-19 20:32:50,235 Fold 0
+ 20:2016-10-19 20:33:59,855 Loading Data
+ 10:2016-10-19 20:34:00,601 X Shape = (160000, 20)y Shape = (160000,)S Shape = (40000, 20)
+ 20:2016-10-19 20:34:00,602 Brewing Classifiers
+ 10:2016-10-19 20:34:00,602 1 Classifiers Brewed
+ 20:2016-10-19 20:34:00,602 Fitting Classifier:etc
+ 20:2016-10-19 20:34:00,602 Step 1. K-Fold OOB Creation
+ 10:2016-10-19 20:34:00,625 Fold 0
+ 20:2016-10-19 20:35:08,215 Loading Data
+ 10:2016-10-19 20:35:09,008 X Shape = (160000, 20)y Shape = (160000,)S Shape = (40000, 20)
+ 20:2016-10-19 20:35:09,008 Brewing Classifiers
+ 10:2016-10-19 20:35:09,008 1 Classifiers Brewed
+ 20:2016-10-19 20:35:09,008 Fitting Classifier:etc
+ 20:2016-10-19 20:35:09,009 Step 1. K-Fold OOB Creation
+ 10:2016-10-19 20:35:09,033 Fold 0
+ 10:2016-10-19 20:35:34,608 Fold 1
+ 10:2016-10-19 20:36:00,006 Fold 2
+ 10:2016-10-19 20:36:27,456 Fold 3
+ 10:2016-10-19 20:36:54,391 Fold 4
+ 20:2016-10-19 20:37:20,397 etc done training.  AUC = 0.983977243511
+ 20:2016-10-19 20:37:20,647 Step 2. Submission Scoring
+ 20:2016-10-19 20:37:49,823 Done
+INFO::2016-10-19 20:56:30,362 Loading Data
+DEBUG::2016-10-19 20:56:31,113 X Shape = (160000, 20)y Shape = (160000,)S Shape = (40000, 20)
+INFO::2016-10-19 20:56:31,113 Brewing Classifiers
+DEBUG::2016-10-19 20:56:31,114 4 Classifiers Brewed
+INFO::2016-10-19 20:56:31,114 Fitting Classifier:deep_learn
+INFO::2016-10-19 20:56:31,114 Step 1. K-Fold OOB Creation
+DEBUG::2016-10-19 20:56:31,137 Fold 0
+DEBUG::2016-10-19 21:10:50,091 Fold 1
+DEBUG::2016-10-19 21:24:41,144 Fold 2
+DEBUG::2016-10-19 21:38:29,926 Fold 3
+DEBUG::2016-10-19 21:52:15,032 Fold 4
+INFO::2016-10-19 22:06:08,464 deep_learn done training.  AUC = 0.982738196939
+INFO::2016-10-19 22:06:08,875 Step 2. Submission Scoring
+INFO::2016-10-19 22:23:39,393 Fitting Classifier:extra_tree
+INFO::2016-10-19 22:23:39,393 Step 1. K-Fold OOB Creation
+DEBUG::2016-10-19 22:23:39,416 Fold 0
+DEBUG::2016-10-19 22:24:04,311 Fold 1
+DEBUG::2016-10-19 22:24:28,706 Fold 2
+DEBUG::2016-10-19 22:24:54,103 Fold 3
+DEBUG::2016-10-19 22:25:19,928 Fold 4
+INFO::2016-10-19 22:25:44,638 extra_tree done training.  AUC = 0.984028443579
+INFO::2016-10-19 22:25:44,889 Step 2. Submission Scoring
+INFO::2016-10-19 22:26:14,568 Fitting Classifier:xgboost
+INFO::2016-10-19 22:26:14,568 Step 1. K-Fold OOB Creation
+DEBUG::2016-10-19 22:26:14,591 Fold 0
+DEBUG::2016-10-19 22:27:09,000 Fold 1
+DEBUG::2016-10-19 22:28:05,208 Fold 2
+DEBUG::2016-10-19 22:28:59,011 Fold 3
+DEBUG::2016-10-19 22:29:53,564 Fold 4
+INFO::2016-10-19 22:30:49,835 xgboost done training.  AUC = 0.987379696307
+INFO::2016-10-19 22:30:50,233 Step 2. Submission Scoring
+INFO::2016-10-19 22:31:59,101 Fitting Classifier:rfc
+INFO::2016-10-19 22:31:59,102 Step 1. K-Fold OOB Creation
+DEBUG::2016-10-19 22:31:59,125 Fold 0
+INFO::2016-10-20 08:05:41,508 Loading Data
+DEBUG::2016-10-20 08:05:42,299 X Shape = (160000, 20)y Shape = (160000,)S Shape = (40000, 20)
+INFO::2016-10-20 08:05:42,299 Brewing Classifiers
+DEBUG::2016-10-20 08:05:42,300 4 Classifiers Brewed
+INFO::2016-10-20 08:05:42,300 Fitting Classifier:extra_tree
+INFO::2016-10-20 08:05:42,300 Step 1. K-Fold OOB Creation
+DEBUG::2016-10-20 08:05:42,323 Fold 0
+DEBUG::2016-10-20 08:06:08,323 Fold 1
+DEBUG::2016-10-20 08:06:33,945 Fold 2
+DEBUG::2016-10-20 08:07:00,246 Fold 3
+DEBUG::2016-10-20 08:07:26,340 Fold 4
+INFO::2016-10-20 08:07:52,651 extra_tree done training.  AUC = 0.983981958267
+INFO::2016-10-20 08:07:52,897 Step 2. Submission Scoring
+INFO::2016-10-20 08:08:23,274 Fitting Classifier:xgboost
+INFO::2016-10-20 08:08:23,274 Step 1. K-Fold OOB Creation
+DEBUG::2016-10-20 08:08:23,299 Fold 0
+DEBUG::2016-10-20 08:09:18,098 Fold 1
+DEBUG::2016-10-20 08:10:13,331 Fold 2
+DEBUG::2016-10-20 08:11:08,154 Fold 3
+DEBUG::2016-10-20 08:12:02,467 Fold 4
+INFO::2016-10-20 08:12:57,772 xgboost done training.  AUC = 0.987379696307
+INFO::2016-10-20 08:12:58,171 Step 2. Submission Scoring
+INFO::2016-10-20 08:14:10,020 Fitting Classifier:rfc
+INFO::2016-10-20 08:14:10,020 Step 1. K-Fold OOB Creation
+DEBUG::2016-10-20 08:14:10,043 Fold 0
+DEBUG::2016-10-20 08:15:35,966 Fold 1
+DEBUG::2016-10-20 08:17:00,993 Fold 2
+DEBUG::2016-10-20 08:18:26,141 Fold 3
+DEBUG::2016-10-20 08:19:50,540 Fold 4
+INFO::2016-10-20 08:21:17,007 rfc done training.  AUC = 0.983268984132
+INFO::2016-10-20 08:21:17,271 Step 2. Submission Scoring
+INFO::2016-10-20 08:23:12,350 Fitting Classifier:deep_learn
+INFO::2016-10-20 08:23:12,350 Step 1. K-Fold OOB Creation
+DEBUG::2016-10-20 08:23:12,375 Fold 0
+DEBUG::2016-10-20 08:37:29,530 Fold 1
+DEBUG::2016-10-20 08:50:52,794 Fold 2
+DEBUG::2016-10-20 09:04:19,889 Fold 3
+DEBUG::2016-10-20 09:17:34,050 Fold 4
+INFO::2016-10-20 09:30:46,773 deep_learn done training.  AUC = 0.984007421071
+INFO::2016-10-20 09:30:47,145 Step 2. Submission Scoring
+INFO::2016-10-20 09:47:25,620 Done
+INFO::2016-10-20 18:34:58,495 Loading Data
+DEBUG::2016-10-20 18:34:59,026 X Shape = (160000, 5)y Shape = (160000,)
