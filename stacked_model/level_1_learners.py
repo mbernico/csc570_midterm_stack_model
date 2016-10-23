@@ -125,7 +125,7 @@ def fit_classifier(clf_name, clf, X, y, S, n_folds):
 
 
 def main():
-    n_jobs = 63
+    n_jobs = 31
     config_logging()
     logging.info("Loading Data")
     X, y, S = load_data()
