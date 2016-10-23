@@ -66,14 +66,14 @@ def get_classifiers(n_jobs):
     Creates a list of level 1 learners
     :return: a list of level 1 learners
     """
-    etc = ExtraTreesClassifier(n_jobs=n_jobs, n_estimators=500, max_features='log2', min_samples_split=1,
+    etc = ExtraTreesClassifier(n_jobs=n_jobs, n_estimators=2000, max_features='log2', min_samples_split=1,
                                max_depth=None, criterion='entropy')
     xgb = xgboost.XGBClassifier(nthread=n_jobs, n_estimators=300, learning_rate=0.31, max_depth=16, colsample_bytree=1)
-    rfc = RandomForestClassifier(n_jobs=n_jobs, random_state=42, n_estimators=500, max_depth=None, max_features='auto',
+    rfc = RandomForestClassifier(n_jobs=n_jobs, random_state=42, n_estimators=2000, max_depth=None, max_features='auto',
                                  min_samples_split=2, criterion='entropy')
     dnn = KerasClassifier(build_fn=create_keras_model, verbose=0, nb_epoch=150)
 
-    p_etc = ExtraTreesClassifier(n_jobs=n_jobs, random_state=42, n_estimators=500, max_features='auto',
+    p_etc = ExtraTreesClassifier(n_jobs=n_jobs, random_state=42, n_estimators=2000, max_features='auto',
                                  criterion='gini',
                                  min_samples_split=1, max_depth=None)
     poly = PolynomialFeatures(interaction_only=True, degree=2, include_bias=True)
@@ -125,7 +125,7 @@ def fit_classifier(clf_name, clf, X, y, S, n_folds):
 
 
 def main():
-    n_jobs = 6
+    n_jobs = 63
     config_logging()
     logging.info("Loading Data")
     X, y, S = load_data()
