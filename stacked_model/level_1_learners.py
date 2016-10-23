@@ -20,7 +20,8 @@ from sklearn.cross_validation import StratifiedKFold
 from sklearn.ensemble import ExtraTreesClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import roc_auc_score
-
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import PolynomialFeatures
 
 def load_data():
     """
@@ -60,19 +61,25 @@ def create_keras_model(dropout=0.1, optimizer='adam'):
     return model
 
 
-def get_classifiers():
+def get_classifiers(n_jobs):
     """
     Creates a list of level 1 learners
     :return: a list of level 1 learners
     """
-    etc = ExtraTreesClassifier(n_jobs=6, n_estimators=500, max_features='log2', min_samples_split=1,
+    etc = ExtraTreesClassifier(n_jobs=n_jobs, n_estimators=500, max_features='log2', min_samples_split=1,
                                max_depth=None, criterion='entropy')
-    xgb = xgboost.XGBClassifier(nthread=6, n_estimators=300, learning_rate=0.31, max_depth=16, colsample_bytree=1)
-    rfc = RandomForestClassifier(n_jobs=6, random_state=42, n_estimators=500, max_depth=None, max_features='auto',
+    xgb = xgboost.XGBClassifier(nthread=n_jobs, n_estimators=300, learning_rate=0.31, max_depth=16, colsample_bytree=1)
+    rfc = RandomForestClassifier(n_jobs=n_jobs, random_state=42, n_estimators=500, max_depth=None, max_features='auto',
                                  min_samples_split=2, criterion='entropy')
     dnn = KerasClassifier(build_fn=create_keras_model, verbose=0, nb_epoch=150)
 
-    return {'extra_tree': etc, 'xgboost': xgb, 'rfc': rfc, 'deep_learn': dnn}
+    p_etc = ExtraTreesClassifier(n_jobs=n_jobs, random_state=42, n_estimators=500, max_features='auto',
+                                 criterion='gini',
+                                 min_samples_split=1, max_depth=None)
+    poly = PolynomialFeatures(interaction_only=True, degree=2, include_bias=True)
+    p_pipe = Pipeline([('poly', poly), ('etc', p_etc)])
+
+    return {'extra_tree': etc, 'xgboost': xgb, 'rfc': rfc, 'deep_learn': dnn, 'poly_pipe': p_pipe}
 
 
 def fit_classifier(clf_name, clf, X, y, S, n_folds):
@@ -118,12 +125,13 @@ def fit_classifier(clf_name, clf, X, y, S, n_folds):
 
 
 def main():
+    n_jobs = 6
     config_logging()
     logging.info("Loading Data")
     X, y, S = load_data()
     logging.debug("X Shape = " + str(X.shape) + "y Shape = " + str(y.shape) + "S Shape = " + str(S.shape))
     logging.info("Brewing Classifiers")
-    clfs = get_classifiers()
+    clfs = get_classifiers(n_jobs)
     logging.debug(str(len(clfs)) + " Classifiers Brewed")
     for k, clf in clfs.items():
         logging.info("Fitting Classifier:" + str(k))
