@@ -20,8 +20,7 @@ from sklearn.cross_validation import StratifiedKFold
 from sklearn.ensemble import ExtraTreesClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import roc_auc_score
-from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import PolynomialFeatures
+
 
 def load_data():
     """
@@ -76,10 +75,11 @@ def get_classifiers(n_jobs):
     p_etc = ExtraTreesClassifier(n_jobs=n_jobs, random_state=42, n_estimators=2000, max_features='auto',
                                  criterion='gini',
                                  min_samples_split=1, max_depth=None)
-    poly = PolynomialFeatures(interaction_only=True, degree=2, include_bias=True)
-    p_pipe = Pipeline([('poly', poly), ('etc', p_etc)])
+    # poly = PolynomialFeatures(interaction_only=True, degree=2, include_bias=True)
+    # p_pipe = Pipeline([('poly', poly), ('etc', p_etc)])
+    # this was a good model, but it made the ensemble worse
 
-    return {'extra_tree': etc, 'xgboost': xgb, 'rfc': rfc, 'deep_learn': dnn, 'poly_pipe': p_pipe}
+    return {'extra_tree': etc, 'xgboost': xgb, 'rfc': rfc, 'deep_learn': dnn}
 
 
 def fit_classifier(clf_name, clf, X, y, S, n_folds):
