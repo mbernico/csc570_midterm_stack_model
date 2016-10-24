@@ -60,11 +60,11 @@ def get_classifiers():
     Creates a list of level 1 learners
     :return: a list of level 1 learners
     """
-    etc = ExtraTreesClassifier(n_jobs=6, n_estimators=500, max_features='auto', min_samples_split=3,
-                               max_depth=10, criterion='entropy')
-    xgb = xgboost.XGBClassifier(nthread=6, n_estimators=300, learning_rate=0.01, max_depth=16, colsample_bytree=1)
+    etc = ExtraTreesClassifier(n_jobs=6, n_estimators=500, max_features='auto', min_samples_split=1,
+                               max_depth=10, criterion='gini')
+    xgb = xgboost.XGBClassifier(nthread=6, n_estimators=300, learning_rate=0.01, max_depth=14, colsample_bytree=0.5)
     rfc = RandomForestClassifier(n_jobs=6, random_state=42, n_estimators=500, max_depth=10, max_features='auto',
-                                 min_samples_split=1, criterion='entropy')
+                                 min_samples_split=2, criterion='gini')
     # searched params
     # rfc {'criterion': 'entropy', 'min_samples_split': 1, 'max_features': 'auto', 'max_depth': 10}
     # extra 'criterion': 'entropy', 'min_samples_split': 3, 'max_features': 'auto', 'max_depth': 10}
@@ -117,11 +117,8 @@ def search_classifier(clf_name, X, y):
     """
     random search on a classifier
     :param clf_name: name of the classifier
-    :param clf: classifier instance
     :param X: training independent
     :param y: training dependent
-    :param S: kaggle submission
-    :param n_folds:
     :return: None
     """
     if clf_name == 'extra_tree':

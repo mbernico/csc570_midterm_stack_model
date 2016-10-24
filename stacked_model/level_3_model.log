@@ -41,3 +41,111 @@ INFO::2016-10-22 08:35:52,819 Best Parameters: {'min_samples_split': 3, 'criteri
 INFO::2016-10-22 08:35:52,819 Best Score: 0.989883676798
 INFO::2016-10-22 08:35:52,819 Writing Final Score
 INFO::2016-10-22 08:35:53,041 Done
+INFO::2016-10-24 07:25:28,373 Loading Data
+DEBUG::2016-10-24 07:25:28,914 X Shape = (160000, 3) y Shape = (160000,) S Shape = (40000, 3)
+INFO::2016-10-24 07:25:28,914 Searching for a final logit model...
+INFO::2016-10-24 07:28:35,478 Done Searching
+INFO::2016-10-24 07:28:35,478 Best Parameters: {'min_samples_split': 1, 'max_features': 'log2', 'criterion': 'entropy', 'max_depth': 5}
+INFO::2016-10-24 07:28:35,478 Best Score: 0.989423233256
+INFO::2016-10-24 07:28:35,478 Writing Final Score
+INFO::2016-10-24 07:28:35,717 Done
+INFO::2016-10-24 07:29:39,402 Loading Data
+DEBUG::2016-10-24 07:29:39,943 X Shape = (160000, 3) y Shape = (160000,) S Shape = (40000, 3)
+INFO::2016-10-24 07:29:39,943 Searching for a final logit model...
+INFO::2016-10-24 07:42:28,166 Done Searching
+INFO::2016-10-24 07:42:28,166 Best Parameters: {'criterion': 'entropy', 'min_samples_split': 2, 'max_depth': 5, 'max_features': 'log2'}
+INFO::2016-10-24 07:42:28,166 Best Score: 0.989435217997
+INFO::2016-10-24 07:42:28,166 Writing Final Score
+INFO::2016-10-24 07:42:28,611 Done
+INFO::2016-10-24 07:51:08,342 Loading Data
+DEBUG::2016-10-24 07:51:08,885 X Shape = (160000, 3) y Shape = (160000,) S Shape = (40000, 3)
+INFO::2016-10-24 07:51:08,885 Searching for a final logit model...
+INFO::2016-10-24 08:18:18,941 Done Searching
+INFO::2016-10-24 08:18:18,941 Best Parameters: {'max_features': 'log2', 'min_samples_split': 2, 'criterion': 'entropy', 'max_depth': 5}
+INFO::2016-10-24 08:18:18,941 Best Score: 0.989452324896
+INFO::2016-10-24 08:18:18,941 Writing Final Score
+INFO::2016-10-24 08:18:20,295 Done
+INFO::2016-10-24 16:56:11,530 Loading Data
+DEBUG::2016-10-24 16:56:12,073 X Shape = (160000, 3) y Shape = (160000,) S Shape = (40000, 3)
+INFO::2016-10-24 16:56:12,073 Searching for a final logit model...
+INFO::2016-10-24 16:56:12,541 Done
+INFO::2016-10-24 16:57:50,852 Loading Data
+DEBUG::2016-10-24 16:57:51,380 X Shape = (160000, 3) y Shape = (160000,) S Shape = (40000, 3)
+INFO::2016-10-24 16:57:51,380 Searching for a final model...
+INFO::2016-10-24 16:59:00,276 Loading Data
+DEBUG::2016-10-24 16:59:00,803 X Shape = (160000, 3) y Shape = (160000,) S Shape = (40000, 3)
+INFO::2016-10-24 16:59:00,804 Searching for a final model...
+INFO::2016-10-24 16:59:00,836 0.989285413482
+INFO::2016-10-24 16:59:01,291 Done
+INFO::2016-10-24 17:00:44,414 Loading Data
+DEBUG::2016-10-24 17:00:44,947 X Shape = (160000, 3) y Shape = (160000,) S Shape = (40000, 3)
+INFO::2016-10-24 17:00:44,947 Searching for a final model...
+INFO::2016-10-24 17:00:44,978 0.989335824153
+INFO::2016-10-24 17:00:44,979 Done
+INFO::2016-10-24 17:02:06,488 Loading Data
+DEBUG::2016-10-24 17:02:07,023 X Shape = (160000, 3) y Shape = (160000,) S Shape = (40000, 3)
+INFO::2016-10-24 17:02:07,023 Searching for a final model...
+INFO::2016-10-24 17:02:07,054 0.989335824153
+INFO::2016-10-24 17:02:07,055 Done
+INFO::2016-10-24 17:07:26,669 Loading Data
+DEBUG::2016-10-24 17:07:27,198 X Shape = (160000, 3) y Shape = (160000,) S Shape = (40000, 3)
+INFO::2016-10-24 17:07:27,198 Searching for a final model...
+INFO::2016-10-24 17:07:27,230 0.989335824153
+INFO::2016-10-24 17:07:27,231 Done
+INFO::2016-10-24 17:24:51,031 Loading Data
+DEBUG::2016-10-24 17:24:51,565 X Shape = (160000, 3) y Shape = (160000,) S Shape = (40000, 3)
+INFO::2016-10-24 17:24:51,565 Searching for a final model...
+INFO::2016-10-24 17:24:51,597 0.989335824153
+INFO::2016-10-24 17:24:51,597 Done
+INFO::2016-10-24 17:25:37,282 Loading Data
+DEBUG::2016-10-24 17:25:37,806 X Shape = (160000, 3) y Shape = (160000,) S Shape = (40000, 3)
+INFO::2016-10-24 17:25:37,806 Searching for a final model...
+INFO::2016-10-24 17:25:37,836 0.989335824153
+INFO::2016-10-24 17:25:37,837 Done
+INFO::2016-10-24 17:27:28,278 Loading Data
+DEBUG::2016-10-24 17:27:28,808 X Shape = (160000, 3) y Shape = (160000,) S Shape = (40000, 3)
+INFO::2016-10-24 17:27:28,808 Searching for a final model...
+INFO::2016-10-24 17:27:28,839 0.989335824153
+INFO::2016-10-24 17:27:28,840 Done
+INFO::2016-10-24 17:28:32,743 Loading Data
+DEBUG::2016-10-24 17:28:33,270 X Shape = (160000, 3) y Shape = (160000,) S Shape = (40000, 3)
+INFO::2016-10-24 17:28:33,270 Searching for a final model...
+INFO::2016-10-24 17:28:33,301 0.989335824153
+INFO::2016-10-24 17:28:33,303 Done
+INFO::2016-10-24 17:29:06,510 Loading Data
+DEBUG::2016-10-24 17:29:07,033 X Shape = (160000, 3) y Shape = (160000,) S Shape = (40000, 3)
+INFO::2016-10-24 17:29:07,033 Searching for a final model...
+INFO::2016-10-24 17:29:07,064 0.989335824153
+INFO::2016-10-24 17:29:07,091 Done
+INFO::2016-10-24 17:29:36,718 Loading Data
+DEBUG::2016-10-24 17:29:37,255 X Shape = (160000, 3) y Shape = (160000,) S Shape = (40000, 3)
+INFO::2016-10-24 17:29:37,255 Searching for a final model...
+INFO::2016-10-24 17:29:37,285 0.989335824153
+INFO::2016-10-24 17:29:41,168 Loading Data
+DEBUG::2016-10-24 17:29:41,695 X Shape = (160000, 3) y Shape = (160000,) S Shape = (40000, 3)
+INFO::2016-10-24 17:29:41,695 Searching for a final model...
+INFO::2016-10-24 17:29:41,726 0.989335824153
+INFO::2016-10-24 17:30:18,321 Loading Data
+DEBUG::2016-10-24 17:30:18,845 X Shape = (160000, 3) y Shape = (160000,) S Shape = (40000, 3)
+INFO::2016-10-24 17:30:18,845 Searching for a final model...
+INFO::2016-10-24 17:30:18,876 0.989335824153
+INFO::2016-10-24 17:30:18,877 Done
+INFO::2016-10-24 17:30:55,199 Loading Data
+DEBUG::2016-10-24 17:30:55,827 X Shape = (160000, 3) y Shape = (160000,) S Shape = (40000, 3)
+INFO::2016-10-24 17:30:55,828 Searching for a final model...
+INFO::2016-10-24 17:30:55,859 0.989335824153
+INFO::2016-10-24 17:31:14,648 Loading Data
+DEBUG::2016-10-24 17:31:15,180 X Shape = (160000, 3) y Shape = (160000,) S Shape = (40000, 3)
+INFO::2016-10-24 17:31:15,180 Searching for a final model...
+INFO::2016-10-24 17:31:15,210 0.989335824153
+INFO::2016-10-24 17:31:15,331 Done
+INFO::2016-10-24 17:31:25,158 Loading Data
+DEBUG::2016-10-24 17:31:25,697 X Shape = (160000, 3) y Shape = (160000,) S Shape = (40000, 3)
+INFO::2016-10-24 17:31:25,697 Searching for a final model...
+INFO::2016-10-24 17:31:25,728 0.989335824153
+INFO::2016-10-24 17:31:25,843 Done
+INFO::2016-10-24 17:33:39,180 Loading Data
+DEBUG::2016-10-24 17:33:39,710 X Shape = (160000, 3) y Shape = (160000,) S Shape = (40000, 3)
+INFO::2016-10-24 17:33:39,710 Searching for a final model...
+INFO::2016-10-24 17:33:39,741 0.989335824153
+INFO::2016-10-24 17:33:39,852 Done
