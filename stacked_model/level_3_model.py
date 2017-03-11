@@ -12,7 +12,7 @@ import logging
 
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.grid_search import RandomizedSearchCV
+from sklearn.model_selection import RandomizedSearchCV
 
 
 def load_data():
@@ -21,7 +21,7 @@ def load_data():
     :return: X, y, S
     """
     # training data y
-    df = pd.read_csv("./base_data/boruta_filtered_stacked_train.csv")
+    df = pd.read_csv("../data/boruta_filtered_train.csv")
     y = df['y']
 
     # level_2 OOB predictions
@@ -50,18 +50,18 @@ def config_logging():
                         format='%(levelname)s::%(asctime)s %(message)s')
 
 
-def main(grid_search=False):
+def main():
     config_logging()
     logging.info("Loading Data")
     X, y, S = load_data()
     logging.debug("X Shape = " + str(X.shape) + " y Shape = " + str(y.shape) + " S Shape = " + str(S.shape))
-    logging.info("Searching for a final logit model...")
+    logging.info("Searching for a final model...")
     # clf = LogisticRegression(random_state=42, n_jobs=6)
     # hyperparameters = {'C': np.arange(.01, 10, .1)}
     # search = RandomizedSearchCV(clf, hyperparameters, n_iter=10, scoring='roc_auc', random_state=42)
     clf = RandomForestClassifier(n_jobs=6, random_state=42, n_estimators=100)
     hyperparameters = {'max_depth': [None, 10, 5], 'max_features': ['auto', 'log2'],
-                       'min_samples_split': [1, 2, 3], 'criterion': ['entropy', 'gini']
+                       'min_samples_split': [2, 3], 'criterion': ['entropy', 'gini']
                        }
     search = RandomizedSearchCV(clf, hyperparameters, cv=5, scoring='roc_auc')
     search.fit(X, y)
@@ -78,4 +78,4 @@ def main(grid_search=False):
 
 
 if __name__ == "__main__":
-    main(grid_search=False)
+    main()

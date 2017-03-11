@@ -13,10 +13,10 @@ import logging
 import numpy as np
 import pandas as pd
 import xgboost
-from sklearn.cross_validation import StratifiedKFold
+from sklearn.model_selection import StratifiedKFold
 from sklearn.ensemble import ExtraTreesClassifier
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.grid_search import RandomizedSearchCV
+from sklearn.model_selection import RandomizedSearchCV
 from sklearn.metrics import roc_auc_score
 
 
@@ -26,7 +26,7 @@ def load_data():
     :return: X, y, S
     """
     # training data y
-    df = pd.read_csv("./base_data/boruta_filtered_stacked_train.csv")
+    df = pd.read_csv("../data/boruta_filtered_train.csv")
     y = df['y']
 
     # level_1 OOB predictions
@@ -60,15 +60,16 @@ def get_classifiers():
     Creates a list of level 1 learners
     :return: a list of level 1 learners
     """
-    etc = ExtraTreesClassifier(n_jobs=6, n_estimators=500, max_features='auto', min_samples_split=1,
-                               max_depth=10, criterion='gini')
-    xgb = xgboost.XGBClassifier(nthread=6, n_estimators=300, learning_rate=0.01, max_depth=14, colsample_bytree=0.5)
-    rfc = RandomForestClassifier(n_jobs=6, random_state=42, n_estimators=500, max_depth=10, max_features='auto',
+    etc = ExtraTreesClassifier(n_jobs=6, n_estimators=500, max_features='auto', min_samples_split=3,
+                               max_depth=10, criterion='entropy')
+    xgb = xgboost.XGBClassifier(nthread=6, n_estimators=300, learning_rate=0.11, max_depth=10, colsample_bytree=1)
+    rfc = RandomForestClassifier(n_jobs=6, random_state=42, n_estimators=500, max_depth=10, max_features='log2',
                                  min_samples_split=2, criterion='gini')
     # searched params
-    # rfc {'criterion': 'entropy', 'min_samples_split': 1, 'max_features': 'auto', 'max_depth': 10}
-    # extra 'criterion': 'entropy', 'min_samples_split': 3, 'max_features': 'auto', 'max_depth': 10}
-    # xgb  {'learning_rate': 0.01, 'colsample_bytree': 1, 'max_depth': 16}
+    # rfc {'max_features': 'log2', 'min_samples_split': 2, 'criterion': 'gini', 'max_depth': 10}
+    # extra {'max_features': 'auto', 'min_samples_split': 3, 'criterion': 'entropy', 'max_depth': 10}
+    # xgb  {'learning_rate': 0.11, 'colsample_bytree': 1, 'max_depth': 10}
+
     return {'extra_tree': etc, 'xgboost': xgb, 'rfc': rfc}  # 'deep_learn': dnn}
 
 
@@ -124,7 +125,7 @@ def search_classifier(clf_name, X, y):
     if clf_name == 'extra_tree':
         clf = ExtraTreesClassifier(n_jobs=6, random_state=42, n_estimators=100)
         hyperparameters = {'max_depth': [None, 10, 5], 'max_features': ['auto', 'log2'],
-                           'min_samples_split': [1, 2, 3], 'criterion': ['entropy', 'gini']
+                           'min_samples_split': [2, 3], 'criterion': ['entropy', 'gini']
                            }
         search = RandomizedSearchCV(clf, hyperparameters, cv=5, scoring='roc_auc')
     if clf_name == 'xgboost':
@@ -135,7 +136,7 @@ def search_classifier(clf_name, X, y):
     if clf_name == 'rfc':
         clf = RandomForestClassifier(n_jobs=6, random_state=42, n_estimators=100)
         hyperparameters = {'max_depth': [None, 10, 5], 'max_features': ['auto', 'log2'],
-                           'min_samples_split': [1, 2, 3], 'criterion': ['entropy', 'gini']
+                           'min_samples_split': [2, 3], 'criterion': ['entropy', 'gini']
                            }
         search = RandomizedSearchCV(clf, hyperparameters, cv=5, scoring='roc_auc')
 

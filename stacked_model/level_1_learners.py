@@ -16,7 +16,7 @@ from keras.layers import Dense
 from keras.layers import Dropout
 from keras.models import Sequential
 from keras.wrappers.scikit_learn import KerasClassifier
-from sklearn.cross_validation import StratifiedKFold
+from sklearn.model_selection import StratifiedKFold
 from sklearn.ensemble import ExtraTreesClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import roc_auc_score
@@ -28,13 +28,15 @@ def load_data():
     :return: X, y, S
     """
     # training data
-    df = pd.read_csv("./base_data/boruta_filtered_stacked_train.csv")
+    df = pd.read_csv("../data/boruta_filtered_train.csv")
     y = df['y']
     X = df.drop(['y'], axis=1)
     # Create Submission
-    kaggle_submission = pd.read_csv("./base_data/my_midterm_kaggle_submission.csv")
-    selected_features = pd.read_csv("./base_data/feature_support.csv")
+    kaggle_submission = pd.read_csv("../work_dir/my_midterm_kaggle_submission.csv")
+    selected_features = pd.read_csv("../work_dir/feature_support.csv")
+    print(selected_features['0'].values)
     kaggle_submission = kaggle_submission.ix[:, selected_features['0'].values]  # trim to the boruta features
+
     return X, y, kaggle_submission
 
 
@@ -47,10 +49,10 @@ def config_logging():
                         format='%(levelname)s::%(asctime)s %(message)s')
 
 
-def create_keras_model(dropout=0.1, optimizer='adam'):
+def create_keras_model(dropout=0.0, optimizer='adam'):
     # create model
     model = Sequential()
-    model.add(Dense(20, input_dim=20, init='glorot_uniform', activation='relu'))
+    model.add(Dense(32, input_dim=24, init='glorot_uniform', activation='relu'))
     model.add(Dense(10, init='glorot_uniform', activation='relu'))
     model.add(Dropout(dropout))
     model.add(Dense(10, init='glorot_uniform', activation='relu'))
@@ -65,12 +67,14 @@ def get_classifiers(n_jobs):
     Creates a list of level 1 learners
     :return: a list of level 1 learners
     """
-    etc = ExtraTreesClassifier(n_jobs=n_jobs, n_estimators=2000, max_features='log2', min_samples_split=1,
-                               max_depth=None, criterion='entropy')
-    xgb = xgboost.XGBClassifier(nthread=n_jobs, n_estimators=300, learning_rate=0.31, max_depth=16, colsample_bytree=1)
+
+    etc = ExtraTreesClassifier(n_jobs=n_jobs, n_estimators=2000, max_features='auto', min_samples_split=2,
+                               max_depth=None, criterion='gini')
+
+    xgb = xgboost.XGBClassifier(nthread=n_jobs, n_estimators=300, learning_rate=0.11, max_depth=14, colsample_bytree=1)
     rfc = RandomForestClassifier(n_jobs=n_jobs, random_state=42, n_estimators=2000, max_depth=None, max_features='auto',
                                  min_samples_split=2, criterion='entropy')
-    dnn = KerasClassifier(build_fn=create_keras_model, verbose=0, nb_epoch=150)
+    dnn = KerasClassifier(build_fn=create_keras_model, verbose=0, nb_epoch=150, batch_size=50)
 
     p_etc = ExtraTreesClassifier(n_jobs=n_jobs, random_state=42, n_estimators=2000, max_features='auto',
                                  criterion='gini',

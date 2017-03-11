@@ -16,7 +16,7 @@ def main():
     print("Begin Feature Selection Step...")
     print('-' * 60)
     print('Loading Data...')
-    df = pd.read_csv("./stacked_model/stacked_train.csv")
+    df = pd.read_csv("./data/my_midterm_train.csv")
     y = df['y']
     X = df.drop(['y'], axis=1)
 
@@ -46,7 +46,7 @@ def main():
     support.to_csv("./work_dir/feature_support.csv", index=False)
     ranking.to_csv("./work_dir/feature_ranking.csv", index=False)
     combined_df = pd.concat([X_filtered, y], axis=1)
-    combined_df.to_csv("./stacked_model/boruta_filtered_stacked_train.csv", index=False)
+    combined_df.to_csv("./data/boruta_filtered_stacked_train.csv", index=False)
 
 
 if __name__ == "__main__":
